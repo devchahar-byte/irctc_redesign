@@ -10,15 +10,15 @@
 .snav.active{background:#E6F1FB;border-color:#185FA5;}
 </style>
 
-<div style="padding:0.5rem 0;font-family:var(--font-sans);">
+<div style="padding:0.5rem 0;font-family:var(--font-sans); zoom: 1.25;">
 
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;padding:12px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);">
   <div style="width:40px;height:40px;border-radius:10px;background:#185FA5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
     <span style="color:white;font-size:13px;font-weight:500;">IR</span>
   </div>
   <div>
-    <p style="margin:0;font-size:15px;font-weight:500;color:var(--color-text-primary);">IRCTC Redesign — UI/UX Case Study</p>
-    <p style="margin:0;font-size:12px;color:var(--color-text-secondary);">Dev Chahar · 23FE10CSE00291 · SEC-C · CSE3252 · Deadline 05/Apr/2026</p>
+    <p style="margin:0;font-size:15px;font-weight:500;color:var(--color-text-primary);">IRCTC Redesign — UI/UX</p>
+    <p style="margin:0;font-size:12px;color:var(--color-text-secondary);">Dev Chahar · 23FE10CSE00291 · SEC-C · CSE3252</p>
   </div>
 </div>
 
@@ -29,7 +29,6 @@
   <button class="tab-btn" id="tb-t" onclick="showTab('t')">Testing</button>
 </div>
 
-<!-- ===== DESIGN THINKING ===== -->
 <div class="sec active" id="sec-d">
   <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 1rem;">Stanford d.school Design Thinking model applied to transform IRCTC from a utility into a delightful travel companion for 800K+ daily users.</p>
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1.5rem;">
@@ -134,7 +133,6 @@
   </div>
 </div>
 
-<!-- ===== RESEARCH ===== -->
 <div class="sec" id="sec-r">
   <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px;">Competitive Analysis — 9 Platform Case Studies</p>
   <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 1rem;">Analyzed 3 tiers of travel/railway booking platforms to identify best practices and common failure patterns.</p>
@@ -263,11 +261,9 @@
   </div>
 </div>
 
-<!-- ===== PROTOTYPE ===== -->
 <div class="sec" id="sec-p">
   <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 1rem;">Hi-fidelity interactive prototype. Tap "Search Trains", "Book →", and payment buttons to navigate the full 4-step booking flow.</p>
   <div style="display:flex;gap:1.5rem;align-items:flex-start;">
-    <!-- Phone -->
     <div style="flex-shrink:0;">
       <div style="width:300px;background:#1a1a1a;border-radius:40px;padding:10px;">
         <div style="width:80px;height:22px;background:#1a1a1a;border-radius:0 0 14px 14px;margin:0 auto 3px;display:flex;align-items:center;justify-content:center;">
@@ -275,7 +271,6 @@
         </div>
         <div style="width:280px;height:560px;background:white;border-radius:28px;overflow:hidden;position:relative;">
 
-          <!-- SCREEN 0: HOME -->
           <div class="phone-screen active" id="ps-0">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="background:#185FA5;padding:10px 14px 18px;">
@@ -314,7 +309,6 @@
             </div>
           </div>
 
-          <!-- SCREEN 1: LOGIN -->
           <div class="phone-screen" id="ps-1">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="padding:18px 18px 14px;">
@@ -333,7 +327,6 @@
             </div>
           </div>
 
-          <!-- SCREEN 2: SEARCH RESULTS -->
           <div class="phone-screen" id="ps-2">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="background:#185FA5;padding:10px 14px 12px;">
@@ -395,7 +388,6 @@
             </div>
           </div>
 
-          <!-- SCREEN 3: PASSENGERS -->
           <div class="phone-screen" id="ps-3">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="background:#185FA5;padding:10px 14px 12px;">
@@ -439,7 +431,6 @@
             </div>
           </div>
 
-          <!-- SCREEN 4: PAYMENT -->
           <div class="phone-screen" id="ps-4">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="background:#185FA5;padding:10px 14px 12px;">
@@ -472,7 +463,6 @@
             </div>
           </div>
 
-          <!-- SCREEN 5: CONFIRMATION -->
           <div class="phone-screen" id="ps-5">
             <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
             <div style="padding:20px 18px;text-align:center;">
@@ -501,7 +491,6 @@
       </div>
     </div>
 
-    <!-- Nav panel -->
     <div style="flex:1;min-width:0;">
       <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px;">Navigate screens</p>
       <button class="snav active" id="snav-0" onclick="gs(0)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Home screen</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Search-first, quick actions, bottom nav</p></button>
@@ -518,7 +507,6 @@
   </div>
 </div>
 
-<!-- ===== TESTING ===== -->
 <div class="sec" id="sec-t">
   <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px;">Usability Testing Results</p>
   <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 1rem;">20+ participants across 3 age groups (18-25, 26-45, 60+), varying tech literacy, and users with mobility/visual impairments.</p>
