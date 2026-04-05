@@ -1,0 +1,589 @@
+
+<style>
+.tab-btn{padding:8px 14px;border:none;background:none;font-size:13px;cursor:pointer;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-0.5px;white-space:nowrap;}
+.tab-btn.active{color:#185FA5;border-bottom-color:#185FA5;}
+.phone-screen{display:none;height:100%;}
+.phone-screen.active{display:block;}
+.sec{display:none;}
+.sec.active{display:block;}
+.snav{text-align:left;padding:10px 12px;width:100%;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-primary);cursor:pointer;margin-bottom:6px;}
+.snav.active{background:#E6F1FB;border-color:#185FA5;}
+</style>
+
+<div style="padding:0.5rem 0;font-family:var(--font-sans); zoom: 1.25;">
+
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;padding:12px 16px;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);">
+  <div style="width:40px;height:40px;border-radius:10px;background:#185FA5;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+    <span style="color:white;font-size:13px;font-weight:500;">IR</span>
+  </div>
+  <div>
+    <p style="margin:0;font-size:15px;font-weight:500;color:var(--color-text-primary);">IRCTC Redesign — UI/UX</p>
+    <p style="margin:0;font-size:12px;color:var(--color-text-secondary);">Dev Chahar · 23FE10CSE00291 · SEC-C · CSE3252</p>
+  </div>
+</div>
+
+<div style="display:flex;gap:0;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.25rem;overflow-x:auto;">
+  <button class="tab-btn active" id="tb-d" onclick="showTab('d')">Design Thinking</button>
+  <button class="tab-btn" id="tb-r" onclick="showTab('r')">Research</button>
+  <button class="tab-btn" id="tb-p" onclick="showTab('p')">Prototype</button>
+  <button class="tab-btn" id="tb-t" onclick="showTab('t')">Testing</button>
+</div>
+
+<div class="sec active" id="sec-d">
+  <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 1rem;">Stanford d.school Design Thinking model applied to transform IRCTC from a utility into a delightful travel companion for 800K+ daily users.</p>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1.5rem;">
+    <div style="background:#E6F1FB;border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;font-weight:500;color:#185FA5;">01</p>
+      <p style="margin:0 0 5px;font-size:12px;font-weight:500;color:#0C447C;">Empathize</p>
+      <p style="margin:0;font-size:10px;color:#185FA5;">20+ user interviews, surveys, journey mapping across 3 personas</p>
+    </div>
+    <div style="background:#E1F5EE;border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;font-weight:500;color:#0F6E56;">02</p>
+      <p style="margin:0 0 5px;font-size:12px;font-weight:500;color:#085041;">Define</p>
+      <p style="margin:0;font-size:10px;color:#0F6E56;">HMW statements, pain point clustering, 9-platform analysis</p>
+    </div>
+    <div style="background:#EEEDFE;border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;font-weight:500;color:#534AB7;">03</p>
+      <p style="margin:0 0 5px;font-size:12px;font-weight:500;color:#3C3489;">Ideate</p>
+      <p style="margin:0;font-size:10px;color:#534AB7;">Sketches, wireframes, competitor-informed solutions</p>
+    </div>
+    <div style="background:#FAEEDA;border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;font-weight:500;color:#BA7517;">04</p>
+      <p style="margin:0 0 5px;font-size:12px;font-weight:500;color:#854F0B;">Prototype</p>
+      <p style="margin:0;font-size:10px;color:#BA7517;">Hi-fi mobile screens, 4-step booking flow</p>
+    </div>
+    <div style="background:#FCEBEB;border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;font-weight:500;color:#A32D2D;">05</p>
+      <p style="margin:0 0 5px;font-size:12px;font-weight:500;color:#791F1F;">Test</p>
+      <p style="margin:0;font-size:10px;color:#A32D2D;">Usability testing 20+ participants, 3 age groups</p>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px;">Nielsen's 10 Heuristic Evaluation</p>
+  <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 0.75rem;">Violations in original IRCTC identified and resolved in the redesign.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:1.5rem;">
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #E24B4A;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H1 · Visibility of System Status</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: No booking progress. Fix: 4-step progress bar (Search → Passengers → Review → Pay).</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #E24B4A;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H2 · Match Real World</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: Railway jargon (Tatkal, GNWL, CNF). Fix: Plain-language labels with inline tooltips.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #EF9F27;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H3 · User Control & Freedom</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: No back/edit mid-booking. Fix: Editable summary header at each step.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #EF9F27;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H4 · Consistency & Standards</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: Inconsistent button styles, mismatched layouts. Fix: Unified design system.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #639922;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H5 · Error Prevention</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: Distorted CAPTCHA causes repeated failures. Fix: Numeric OTP + social login.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #639922;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H6 · Recognition over Recall</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: Saved trips buried deep. Fix: Recent searches and preferences surfaced on home.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #1D9E75;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H7 · Flexibility & Efficiency</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Fix: PNR, cancellation, live status quick-action shortcuts on homepage for power users.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #1D9E75;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H8 · Aesthetic & Minimalist Design</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Violation: Dense, cluttered homepage with 20+ links. Fix: Search-first minimal card layout.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #7F77DD;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H9 · Help Users Recover from Errors</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Fix: Inline error messages with specific recovery suggestions, no dead-end pages.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;border-left:3px solid #7F77DD;">
+      <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">H10 · Help & Documentation</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Fix: Contextual tooltips for jargon terms, help bubbles, senior-assist helpline CTA.</p>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 0.75rem;">Core Design Principles</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Affordance</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">44px+ touch targets, clear button states, tappable cues for all interactive elements.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Visual Hierarchy</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Price and availability surfaced first. Secondary info (stops, notes) collapsed by default.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Feedback</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Every action has immediate visual response. Loading skeletons prevent uncertainty.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Accessibility (WCAG AA)</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">4.5:1 contrast ratio, screen reader labels, large text mode, disability quota auto-select.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Proximity</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Related actions grouped. Payment method shown near price. Labels adjacent to inputs.</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;">
+      <p style="margin:0 0 3px;font-size:12px;font-weight:500;color:var(--color-text-primary);">Progressive Disclosure</p>
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Minimal info on train card; full class breakdown and coach details on tap.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="sec-r">
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px;">Competitive Analysis — 9 Platform Case Studies</p>
+  <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 1rem;">Analyzed 3 tiers of travel/railway booking platforms to identify best practices and common failure patterns.</p>
+
+  <p style="font-size:12px;font-weight:500;color:#0F6E56;margin:0 0 6px;">3 Best — Live Platforms</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;">
+    <div style="background:#E1F5EE;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#085041;">MakeMyTrip</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#0F6E56;">Search-first UI, saved travellers, strong payment UX, clear availability</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#085041;">Adopted: Card-based results, UPI shortcuts, saved preferences</p>
+    </div>
+    <div style="background:#E1F5EE;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#085041;">Goibibo</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#0F6E56;">Minimal filters, inline availability chips, fast social login flow</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#085041;">Adopted: OTP login, availability tags, step-by-step progress</p>
+    </div>
+    <div style="background:#E1F5EE;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#085041;">Cleartrip</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#0F6E56;">Clean layouts, accessible date picker, mobile-first design, bottom nav</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#085041;">Adopted: Bottom nav, date picker design, step reduction</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px;font-weight:500;color:#BA7517;margin:0 0 6px;">3 Average — Partially Live Platforms</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;">
+    <div style="background:#FAEEDA;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#854F0B;">Railyatri</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#BA7517;">Good live status data but cluttered search flow, weak hierarchy</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#854F0B;">Issue: PNR and live status buried; information overload</p>
+    </div>
+    <div style="background:#FAEEDA;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#854F0B;">ConfirmTkt</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#BA7517;">Useful waitlist prediction but high login friction and no social login</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#854F0B;">Issue: Onboarding abandonment, CAPTCHA wall</p>
+    </div>
+    <div style="background:#FAEEDA;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#854F0B;">RailYogi</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#BA7517;">Solid PNR tracking but inconsistent visual design across flows</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#854F0B;">Issue: Violates H4 (consistency); no trust indicators in payment</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px;font-weight:500;color:#A32D2D;margin:0 0 6px;">3 Worst — Partially Live / Dead Platforms</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.5rem;">
+    <div style="background:#FCEBEB;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#791F1F;">Old IRCTC (pre-2021)</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#A32D2D;">Dense UI, CAPTCHA failures, 7-step booking, no mobile support</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#791F1F;">This redesign directly addresses every identified flaw</p>
+    </div>
+    <div style="background:#FCEBEB;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#791F1F;">NTES Mobile</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#A32D2D;">Outdated Android app, no accessibility, frequent crashes, no recovery</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#791F1F;">Violates: H1, H5, H9, H10 — total failure of feedback loops</p>
+    </div>
+    <div style="background:#FCEBEB;border-radius:var(--border-radius-md);padding:11px;">
+      <p style="margin:0 0 2px;font-size:12px;font-weight:500;color:#791F1F;">Trainman (defunct)</p>
+      <p style="margin:0 0 5px;font-size:10px;color:#A32D2D;">Abandoned seat prediction, broken payment gateway, dead support</p>
+      <p style="margin:0;font-size:10px;font-weight:500;color:#791F1F;">Trust collapse: no SSL, no refund clarity, no payment recovery</p>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 0.75rem;">User Personas — Diverse Users (Age, Tech Literacy, Disability)</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;">
+    <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:#E6F1FB;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;color:#185FA5;">RI</div>
+        <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--color-text-primary);">Riya, 21</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Student · Low budget · High tech literacy</p></div>
+      </div>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:var(--color-text-primary);">Goals</p>
+      <p style="margin:0 0 6px;font-size:10px;color:var(--color-text-secondary);">Fast mobile booking, lowest fare, student concession quota</p>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:#A32D2D;">Pain points</p>
+      <p style="margin:0 0 8px;font-size:10px;color:var(--color-text-secondary);">CAPTCHA fails on mobile, quota labels confusing, no UPI on old site</p>
+      <div style="background:#E6F1FB;border-radius:6px;padding:7px;"><p style="margin:0;font-size:10px;color:#185FA5;">Design fix: Mobile-first, UPI shortcuts, plain-language quota labels</p></div>
+    </div>
+    <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:#EEEDFE;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;color:#534AB7;">AR</div>
+        <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--color-text-primary);">Arjun, 34</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Professional · Frequent traveler · High tech</p></div>
+      </div>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:var(--color-text-primary);">Goals</p>
+      <p style="margin:0 0 6px;font-size:10px;color:var(--color-text-secondary);">Saved passengers, quick re-book, schedule alerts, one-tap rebook</p>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:#A32D2D;">Pain points</p>
+      <p style="margin:0 0 8px;font-size:10px;color:var(--color-text-secondary);">Re-entering passenger details every time, no delay alerts, no shortcuts</p>
+      <div style="background:#EEEDFE;border-radius:6px;padding:7px;"><p style="margin:0;font-size:10px;color:#534AB7;">Design fix: Saved trips, travel alerts, recent bookings on home</p></div>
+    </div>
+    <div style="background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:#FAEEDA;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;color:#BA7517;">MO</div>
+        <div><p style="margin:0;font-size:12px;font-weight:500;color:var(--color-text-primary);">Mohan, 68</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Retired · Low tech literacy · Mobility issues</p></div>
+      </div>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:var(--color-text-primary);">Goals</p>
+      <p style="margin:0 0 6px;font-size:10px;color:var(--color-text-secondary);">Senior citizen booking, large text mode, simple flow, phone help</p>
+      <p style="margin:0 0 4px;font-size:10px;font-weight:500;color:#A32D2D;">Pain points</p>
+      <p style="margin:0 0 8px;font-size:10px;color:var(--color-text-secondary);">Small touch targets, technical jargon (GNWL/PQWL), no phone assist link</p>
+      <div style="background:#FAEEDA;border-radius:6px;padding:7px;"><p style="margin:0;font-size:10px;color:#854F0B;">Design fix: 44px+ targets, senior quota auto-select, help hotline CTA</p></div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 0.75rem;">User Journey Map — Before vs After</p>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:14px;">
+    <div style="display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;margin-bottom:8px;">
+      <div></div>
+      <p style="margin:0;font-size:11px;font-weight:500;color:#A32D2D;text-align:center;">Before (7 steps, high friction)</p>
+      <p style="margin:0;font-size:11px;font-weight:500;color:#0F6E56;text-align:center;">After (4 steps, simplified)</p>
+    </div>
+    <div style="display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;margin-bottom:5px;align-items:center;">
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Login</p>
+      <div style="background:#FCEBEB;border-radius:6px;padding:6px 8px;font-size:10px;color:#A32D2D;">CAPTCHA wall + username/pw + repeated timeouts</div>
+      <div style="background:#E1F5EE;border-radius:6px;padding:6px 8px;font-size:10px;color:#085041;">Mobile OTP or Google login — one tap</div>
+    </div>
+    <div style="display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;margin-bottom:5px;align-items:center;">
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Search</p>
+      <div style="background:#FCEBEB;border-radius:6px;padding:6px 8px;font-size:10px;color:#A32D2D;">Navigate cluttered homepage → find search box → configure quota → search</div>
+      <div style="background:#E1F5EE;border-radius:6px;padding:6px 8px;font-size:10px;color:#085041;">Prominent search card above fold, auto-suggest stations</div>
+    </div>
+    <div style="display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;margin-bottom:5px;align-items:center;">
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Select Train</p>
+      <div style="background:#FCEBEB;border-radius:6px;padding:6px 8px;font-size:10px;color:#A32D2D;">Dense list → click into train → check class availability → go back → choose class</div>
+      <div style="background:#E1F5EE;border-radius:6px;padding:6px 8px;font-size:10px;color:#085041;">Availability chips inline on card (Avail 142 / WL 24), price shown</div>
+    </div>
+    <div style="display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;align-items:center;">
+      <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Payment</p>
+      <div style="background:#FCEBEB;border-radius:6px;padding:6px 8px;font-size:10px;color:#A32D2D;">4 separate screens, gateway redirect, unclear trust signals, session timeout</div>
+      <div style="background:#E1F5EE;border-radius:6px;padding:6px 8px;font-size:10px;color:#085041;">SSL badge, UPI shortcut (GPay/PhonePe), trust indicators inline</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="sec-p">
+  <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 1rem;">Hi-fidelity interactive prototype. Tap "Search Trains", "Book →", and payment buttons to navigate the full 4-step booking flow.</p>
+  <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+    <div style="flex-shrink:0;">
+      <div style="width:300px;background:#1a1a1a;border-radius:40px;padding:10px;">
+        <div style="width:80px;height:22px;background:#1a1a1a;border-radius:0 0 14px 14px;margin:0 auto 3px;display:flex;align-items:center;justify-content:center;">
+          <div style="width:50px;height:5px;background:#333;border-radius:3px;"></div>
+        </div>
+        <div style="width:280px;height:560px;background:white;border-radius:28px;overflow:hidden;position:relative;">
+
+          <div class="phone-screen active" id="ps-0">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="background:#185FA5;padding:10px 14px 18px;">
+              <p style="margin:0 0 1px;font-size:10px;color:#B5D4F4;">Welcome back, Arjun</p>
+              <p style="margin:0;font-size:14px;font-weight:500;color:white;">Book Train Tickets</p>
+            </div>
+            <div style="background:white;margin:-9px 10px 0;border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+              <div style="border:1px solid #e2e8f0;border-radius:7px;padding:8px 10px;margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+                <div style="width:7px;height:7px;border-radius:50%;background:#185FA5;flex-shrink:0;"></div>
+                <div><p style="margin:0;font-size:9px;color:#94a3b8;">From</p><p style="margin:0;font-size:12px;font-weight:500;color:#1e293b;">New Delhi (NDLS)</p></div>
+              </div>
+              <div style="border:1px solid #e2e8f0;border-radius:7px;padding:8px 10px;margin-bottom:6px;display:flex;align-items:center;gap:7px;">
+                <div style="width:7px;height:7px;background:#185FA5;flex-shrink:0;"></div>
+                <div><p style="margin:0;font-size:9px;color:#94a3b8;">To</p><p style="margin:0;font-size:12px;font-weight:500;color:#1e293b;">Mumbai CST (CSTM)</p></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px;">
+                <div style="border:1px solid #e2e8f0;border-radius:7px;padding:7px 9px;"><p style="margin:0;font-size:9px;color:#94a3b8;">Date</p><p style="margin:0;font-size:11px;font-weight:500;color:#1e293b;">06 Apr 2026</p></div>
+                <div style="border:1px solid #e2e8f0;border-radius:7px;padding:7px 9px;"><p style="margin:0;font-size:9px;color:#94a3b8;">Class</p><p style="margin:0;font-size:11px;font-weight:500;color:#1e293b;">Sleeper (SL)</p></div>
+              </div>
+              <button onclick="gs(2)" style="width:100%;background:#185FA5;color:white;border:none;border-radius:7px;padding:10px;font-size:12px;font-weight:500;cursor:pointer;">Search Trains</button>
+            </div>
+            <div style="padding:14px 10px 6px;">
+              <p style="margin:0 0 8px;font-size:10px;font-weight:500;color:#64748b;">Quick actions</p>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;">
+                <div style="text-align:center;background:#f8fafc;border-radius:7px;padding:7px 3px;"><p style="margin:0 0 1px;font-size:13px;">📋</p><p style="margin:0;font-size:8px;color:#475569;">PNR</p></div>
+                <div style="text-align:center;background:#f8fafc;border-radius:7px;padding:7px 3px;"><p style="margin:0 0 1px;font-size:13px;">↩</p><p style="margin:0;font-size:8px;color:#475569;">Cancel</p></div>
+                <div style="text-align:center;background:#f8fafc;border-radius:7px;padding:7px 3px;"><p style="margin:0 0 1px;font-size:13px;">📍</p><p style="margin:0;font-size:8px;color:#475569;">Live</p></div>
+                <div style="text-align:center;background:#f8fafc;border-radius:7px;padding:7px 3px;"><p style="margin:0 0 1px;font-size:13px;">📊</p><p style="margin:0;font-size:8px;color:#475569;">Charts</p></div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:white;border-top:1px solid #e2e8f0;display:flex;padding:6px 0 10px;">
+              <div style="flex:1;text-align:center;"><p style="margin:0;font-size:13px;">🏠</p><p style="margin:0;font-size:8px;color:#185FA5;font-weight:500;">Home</p></div>
+              <div style="flex:1;text-align:center;"><p style="margin:0;font-size:13px;">🎫</p><p style="margin:0;font-size:8px;color:#94a3b8;">Bookings</p></div>
+              <div style="flex:1;text-align:center;"><p style="margin:0;font-size:13px;">📋</p><p style="margin:0;font-size:8px;color:#94a3b8;">PNR</p></div>
+              <div style="flex:1;text-align:center;"><p style="margin:0;font-size:13px;">👤</p><p style="margin:0;font-size:8px;color:#94a3b8;">Profile</p></div>
+            </div>
+          </div>
+
+          <div class="phone-screen" id="ps-1">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="padding:18px 18px 14px;">
+              <button onclick="gs(0)" style="background:none;border:none;cursor:pointer;color:#185FA5;font-size:11px;padding:0;margin-bottom:18px;display:block;">← Back</button>
+              <div style="width:44px;height:44px;background:#185FA5;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;"><span style="color:white;font-size:16px;font-weight:500;">IR</span></div>
+              <p style="margin:0 0 3px;font-size:18px;font-weight:500;color:#1e293b;">Sign in</p>
+              <p style="margin:0 0 20px;font-size:12px;color:#64748b;">to your IRCTC account</p>
+              <div style="border:1px solid #e2e8f0;border-radius:7px;padding:10px 12px;margin-bottom:10px;"><p style="margin:0 0 1px;font-size:9px;color:#94a3b8;">Mobile number</p><p style="margin:0;font-size:13px;color:#1e293b;">+91 98765 43210</p></div>
+              <button onclick="gs(2)" style="width:100%;background:#185FA5;color:white;border:none;border-radius:7px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;margin-bottom:14px;">Send OTP — no CAPTCHA</button>
+              <div style="text-align:center;margin-bottom:14px;"><span style="font-size:11px;color:#94a3b8;">or continue with</span></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+                <button onclick="gs(2)" style="border:1px solid #e2e8f0;background:white;border-radius:7px;padding:9px;font-size:11px;cursor:pointer;color:#374151;">G  Google</button>
+                <button onclick="gs(2)" style="border:1px solid #e2e8f0;background:white;border-radius:7px;padding:9px;font-size:11px;cursor:pointer;color:#374151;">f  Facebook</button>
+              </div>
+              <div style="background:#E6F1FB;border-radius:7px;padding:9px;"><p style="margin:0;font-size:10px;color:#185FA5;">Accessibility: Voice-assisted login available. Senior users can call 139 for booking help.</p></div>
+            </div>
+          </div>
+
+          <div class="phone-screen" id="ps-2">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="background:#185FA5;padding:10px 14px 12px;">
+              <button onclick="gs(0)" style="background:none;border:none;cursor:pointer;color:#B5D4F4;font-size:10px;padding:0;margin-bottom:4px;display:block;">← NDLS → CSTM · 06 Apr</button>
+              <p style="margin:0;font-size:11px;color:#B5D4F4;">Sleeper · 23 trains found</p>
+            </div>
+            <div style="display:flex;gap:5px;padding:8px 10px;overflow-x:auto;border-bottom:1px solid #e2e8f0;">
+              <div style="background:#185FA5;color:white;padding:3px 9px;border-radius:20px;font-size:9px;white-space:nowrap;flex-shrink:0;">All trains</div>
+              <div style="background:#f1f5f9;color:#475569;padding:3px 9px;border-radius:20px;font-size:9px;white-space:nowrap;flex-shrink:0;">Available only</div>
+              <div style="background:#f1f5f9;color:#475569;padding:3px 9px;border-radius:20px;font-size:9px;white-space:nowrap;flex-shrink:0;">Sort: Departure</div>
+              <div style="background:#f1f5f9;color:#475569;padding:3px 9px;border-radius:20px;font-size:9px;white-space:nowrap;flex-shrink:0;">Tatkal</div>
+            </div>
+            <div style="overflow-y:auto;height:410px;padding:8px 10px;">
+              <div onclick="gs(3)" style="background:white;border:1px solid #e2e8f0;border-radius:9px;padding:10px;margin-bottom:8px;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                  <div><p style="margin:0;font-size:12px;font-weight:500;color:#1e293b;">12951 · Rajdhani Exp</p><p style="margin:0;font-size:9px;color:#94a3b8;">Mon, Wed, Fri, Sat</p></div>
+                  <span style="background:#E1F5EE;color:#085041;font-size:8px;padding:2px 7px;border-radius:20px;font-weight:500;white-space:nowrap;">Avail 142</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">16:55</p>
+                  <div style="flex:1;border-top:1px dashed #cbd5e1;position:relative;"><span style="position:absolute;top:-7px;left:50%;transform:translateX(-50%);font-size:8px;color:#94a3b8;background:white;padding:0 3px;">15h 35m</span></div>
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">08:30+1</p>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="display:flex;gap:4px;"><span style="background:#f1f5f9;color:#475569;font-size:8px;padding:2px 6px;border-radius:4px;">SL ₹485</span><span style="background:#f1f5f9;color:#475569;font-size:8px;padding:2px 6px;border-radius:4px;">3A ₹1275</span></div>
+                  <span style="font-size:9px;color:#185FA5;font-weight:500;">Book →</span>
+                </div>
+              </div>
+              <div onclick="gs(3)" style="background:white;border:1px solid #e2e8f0;border-radius:9px;padding:10px;margin-bottom:8px;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                  <div><p style="margin:0;font-size:12px;font-weight:500;color:#1e293b;">12137 · Punjab Mail</p><p style="margin:0;font-size:9px;color:#94a3b8;">Daily</p></div>
+                  <span style="background:#FAEEDA;color:#854F0B;font-size:8px;padding:2px 7px;border-radius:20px;font-weight:500;white-space:nowrap;">WL 24</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">19:05</p>
+                  <div style="flex:1;border-top:1px dashed #cbd5e1;position:relative;"><span style="position:absolute;top:-7px;left:50%;transform:translateX(-50%);font-size:8px;color:#94a3b8;background:white;padding:0 3px;">20h 10m</span></div>
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">15:15+1</p>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="display:flex;gap:4px;"><span style="background:#f1f5f9;color:#475569;font-size:8px;padding:2px 6px;border-radius:4px;">SL ₹370</span><span style="background:#FAEEDA;color:#854F0B;font-size:8px;padding:2px 6px;border-radius:4px;">Tatkal ₹640</span></div>
+                  <span style="font-size:9px;color:#185FA5;font-weight:500;">Book →</span>
+                </div>
+              </div>
+              <div onclick="gs(3)" style="background:white;border:1px solid #e2e8f0;border-radius:9px;padding:10px;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                  <div><p style="margin:0;font-size:12px;font-weight:500;color:#1e293b;">22439 · Vande Bharat</p><p style="margin:0;font-size:9px;color:#94a3b8;">Tue, Thu, Sun</p></div>
+                  <span style="background:#E1F5EE;color:#085041;font-size:8px;padding:2px 7px;border-radius:20px;font-weight:500;white-space:nowrap;">Avail 68</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">06:00</p>
+                  <div style="flex:1;border-top:1px dashed #cbd5e1;position:relative;"><span style="position:absolute;top:-7px;left:50%;transform:translateX(-50%);font-size:8px;color:#94a3b8;background:white;padding:0 3px;">12h 45m</span></div>
+                  <p style="margin:0;font-size:13px;font-weight:500;color:#1e293b;">18:45</p>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="display:flex;gap:4px;"><span style="background:#f1f5f9;color:#475569;font-size:8px;padding:2px 6px;border-radius:4px;">CC ₹1850</span></div>
+                  <span style="font-size:9px;color:#185FA5;font-weight:500;">Book →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-screen" id="ps-3">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="background:#185FA5;padding:10px 14px 12px;">
+              <button onclick="gs(2)" style="background:none;border:none;cursor:pointer;color:#B5D4F4;font-size:10px;padding:0;margin-bottom:6px;display:block;">← Rajdhani Exp · SL · ₹485</button>
+              <div style="display:flex;align-items:center;gap:0;">
+                <div style="height:3px;flex:1;background:white;border-radius:2px;"></div>
+                <div style="width:14px;height:14px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin:0 2px;"><span style="font-size:7px;color:#185FA5;font-weight:500;">2</span></div>
+                <div style="height:3px;flex:1;background:rgba(255,255,255,0.35);border-radius:2px;"></div>
+                <div style="width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin:0 2px;"><span style="font-size:7px;color:white;font-weight:500;">3</span></div>
+                <div style="height:3px;flex:1;background:rgba(255,255,255,0.35);border-radius:2px;"></div>
+                <div style="width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin:0 2px;"><span style="font-size:7px;color:white;font-weight:500;">4</span></div>
+                <div style="height:3px;flex:1;background:rgba(255,255,255,0.35);border-radius:2px;"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:3px;">
+                <span style="font-size:7px;color:#B5D4F4;">Search</span>
+                <span style="font-size:7px;color:white;font-weight:500;">Passengers</span>
+                <span style="font-size:7px;color:rgba(255,255,255,0.5);">Review</span>
+                <span style="font-size:7px;color:rgba(255,255,255,0.5);">Pay</span>
+              </div>
+            </div>
+            <div style="overflow-y:auto;height:460px;padding:10px 14px;">
+              <p style="margin:0 0 10px;font-size:13px;font-weight:500;color:#1e293b;">Passenger 1</p>
+              <div style="border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;margin-bottom:7px;"><p style="margin:0 0 1px;font-size:9px;color:#94a3b8;">Full name</p><p style="margin:0;font-size:12px;color:#1e293b;">Arjun Sharma</p></div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;">
+                <div style="border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 1px;font-size:9px;color:#94a3b8;">Age</p><p style="margin:0;font-size:12px;color:#1e293b;">34</p></div>
+                <div style="border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 1px;font-size:9px;color:#94a3b8;">Gender</p><p style="margin:0;font-size:12px;color:#1e293b;">Male</p></div>
+              </div>
+              <div style="border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;margin-bottom:12px;">
+                <p style="margin:0 0 5px;font-size:9px;color:#94a3b8;">Berth preference</p>
+                <div style="display:flex;gap:5px;">
+                  <div style="background:#185FA5;color:white;padding:3px 9px;border-radius:20px;font-size:9px;">Lower</div>
+                  <div style="background:#f1f5f9;color:#475569;padding:3px 9px;border-radius:20px;font-size:9px;">Middle</div>
+                  <div style="background:#f1f5f9;color:#475569;padding:3px 9px;border-radius:20px;font-size:9px;">Upper</div>
+                </div>
+              </div>
+              <div style="background:#E6F1FB;border-radius:7px;padding:9px;margin-bottom:14px;display:flex;gap:7px;">
+                <span style="font-size:13px;flex-shrink:0;">♿</span>
+                <div><p style="margin:0 0 1px;font-size:10px;font-weight:500;color:#185FA5;">Accessibility quota available</p><p style="margin:0;font-size:9px;color:#185FA5;">Specially-abled berths auto-set to Lower berth for comfort</p></div>
+              </div>
+              <button onclick="gs(4)" style="width:100%;background:#185FA5;color:white;border:none;border-radius:7px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;">Review & Pay  ₹485</button>
+            </div>
+          </div>
+
+          <div class="phone-screen" id="ps-4">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="background:#185FA5;padding:10px 14px 12px;">
+              <button onclick="gs(3)" style="background:none;border:none;cursor:pointer;color:#B5D4F4;font-size:10px;padding:0;margin-bottom:3px;display:block;">← Passengers</button>
+              <p style="margin:0;font-size:14px;font-weight:500;color:white;">Secure Payment</p>
+            </div>
+            <div style="overflow-y:auto;height:475px;padding:10px 14px;">
+              <div style="background:#f8fafc;border-radius:7px;padding:9px 11px;margin-bottom:10px;">
+                <p style="margin:0 0 3px;font-size:11px;font-weight:500;color:#1e293b;">Booking summary</p>
+                <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span style="font-size:10px;color:#64748b;">Rajdhani Exp · SL · Arjun</span><span style="font-size:10px;color:#1e293b;">₹485</span></div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span style="font-size:10px;color:#64748b;">IRCTC convenience fee</span><span style="font-size:10px;color:#1e293b;">₹15</span></div>
+                <div style="border-top:1px solid #e2e8f0;margin-top:5px;padding-top:5px;display:flex;justify-content:space-between;"><span style="font-size:11px;font-weight:500;color:#1e293b;">Total</span><span style="font-size:13px;font-weight:500;color:#185FA5;">₹500</span></div>
+              </div>
+              <div style="display:flex;gap:6px;margin-bottom:10px;">
+                <div style="flex:1;background:#E1F5EE;border-radius:5px;padding:5px 7px;text-align:center;"><p style="margin:0;font-size:9px;color:#085041;">🔒 SSL Secured</p></div>
+                <div style="flex:1;background:#E1F5EE;border-radius:5px;padding:5px 7px;text-align:center;"><p style="margin:0;font-size:9px;color:#085041;">✓ PCI-DSS</p></div>
+                <div style="flex:1;background:#E1F5EE;border-radius:5px;padding:5px 7px;text-align:center;"><p style="margin:0;font-size:9px;color:#085041;">↩ Refundable</p></div>
+              </div>
+              <p style="margin:0 0 7px;font-size:11px;font-weight:500;color:#1e293b;">Pay with UPI</p>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;">
+                <button onclick="gs(5)" style="background:white;border:1px solid #e2e8f0;border-radius:7px;padding:9px;cursor:pointer;"><p style="margin:0;font-size:10px;font-weight:500;color:#185FA5;">G Pay</p></button>
+                <button onclick="gs(5)" style="background:white;border:1px solid #e2e8f0;border-radius:7px;padding:9px;cursor:pointer;"><p style="margin:0;font-size:10px;font-weight:500;color:#7C3AED;">PhonePe</p></button>
+                <button onclick="gs(5)" style="background:white;border:1px solid #e2e8f0;border-radius:7px;padding:9px;cursor:pointer;"><p style="margin:0;font-size:10px;font-weight:500;color:#0369a1;">Paytm</p></button>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:14px;">
+                <button style="background:white;border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:7px;"><span style="font-size:12px;">💳</span><span style="font-size:11px;color:#374151;">Credit / Debit Card</span></button>
+                <button style="background:white;border:1px solid #e2e8f0;border-radius:7px;padding:9px 11px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:7px;"><span style="font-size:12px;">🏦</span><span style="font-size:11px;color:#374151;">Net Banking</span></button>
+              </div>
+              <button onclick="gs(5)" style="width:100%;background:#185FA5;color:white;border:none;border-radius:7px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;">Pay ₹500 via GPay</button>
+            </div>
+          </div>
+
+          <div class="phone-screen" id="ps-5">
+            <div style="background:#185FA5;height:24px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;"><span style="color:white;font-size:9px;">9:41</span><span style="color:white;font-size:9px;">●●●</span></div>
+            <div style="padding:20px 18px;text-align:center;">
+              <div style="width:56px;height:56px;background:#E1F5EE;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;">
+                <span style="font-size:24px;color:#0F6E56;">✓</span>
+              </div>
+              <p style="margin:0 0 3px;font-size:17px;font-weight:500;color:#1e293b;">Booking Confirmed!</p>
+              <p style="margin:0 0 20px;font-size:11px;color:#64748b;">Your ticket is booked successfully</p>
+              <div style="background:#f8fafc;border-radius:10px;padding:14px;margin-bottom:18px;text-align:left;">
+                <p style="margin:0 0 3px;font-size:10px;color:#94a3b8;">PNR Number</p>
+                <p style="margin:0 0 11px;font-size:20px;font-weight:500;color:#185FA5;letter-spacing:2px;">4781 200563</p>
+                <div style="border-top:1px dashed #e2e8f0;padding-top:10px;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span style="font-size:10px;color:#64748b;">Train</span><span style="font-size:10px;color:#1e293b;">12951 Rajdhani Exp</span></div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span style="font-size:10px;color:#64748b;">Date</span><span style="font-size:10px;color:#1e293b;">06 Apr 2026</span></div>
+                  <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span style="font-size:10px;color:#64748b;">Berth</span><span style="font-size:10px;color:#1e293b;">S4 / 62 Lower</span></div>
+                  <div style="display:flex;justify-content:space-between;"><span style="font-size:10px;color:#64748b;">Status</span><span style="font-size:10px;font-weight:500;color:#0F6E56;">CONFIRMED (CNF)</span></div>
+                </div>
+              </div>
+              <button style="width:100%;background:#185FA5;color:white;border:none;border-radius:7px;padding:11px;font-size:12px;font-weight:500;cursor:pointer;margin-bottom:7px;">Download Ticket</button>
+              <button onclick="gs(0)" style="width:100%;background:white;color:#185FA5;border:1px solid #185FA5;border-radius:7px;padding:11px;font-size:12px;cursor:pointer;">Back to Home</button>
+            </div>
+          </div>
+
+        </div>
+        <div style="width:36px;height:36px;border-radius:50%;background:#333;margin:8px auto 0;display:flex;align-items:center;justify-content:center;"><div style="width:22px;height:22px;border-radius:50%;background:#555;"></div></div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;">
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin:0 0 8px;">Navigate screens</p>
+      <button class="snav active" id="snav-0" onclick="gs(0)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Home screen</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Search-first, quick actions, bottom nav</p></button>
+      <button class="snav" id="snav-1" onclick="gs(1)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Login</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">OTP + social login, no CAPTCHA</p></button>
+      <button class="snav" id="snav-2" onclick="gs(2)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Search results</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Inline availability chips, filters, Tatkal badge</p></button>
+      <button class="snav" id="snav-3" onclick="gs(3)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Passenger details</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">4-step progress bar, accessibility quota</p></button>
+      <button class="snav" id="snav-4" onclick="gs(4)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Payment</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Trust badges (SSL, PCI-DSS), UPI shortcuts</p></button>
+      <button class="snav" id="snav-5" onclick="gs(5)"><p style="margin:0;font-size:11px;font-weight:500;color:var(--color-text-primary);">Booking confirmation</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">PNR display, download ticket, success state</p></button>
+      <div style="margin-top:12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px;">
+        <p style="margin:0 0 4px;font-size:11px;font-weight:500;color:var(--color-text-primary);">Key improvements in prototype</p>
+        <p style="margin:0;font-size:10px;color:var(--color-text-secondary);">7 steps reduced to 4 · CAPTCHA removed · Availability inline · UPI shortcuts · Accessibility quota auto-select · Trust badges · Bottom nav for one-handed use · Plain-language labels</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec" id="sec-t">
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px;">Usability Testing Results</p>
+  <p style="font-size:12px;color:var(--color-text-secondary);margin:0 0 1rem;">20+ participants across 3 age groups (18-25, 26-45, 60+), varying tech literacy, and users with mobility/visual impairments.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.5rem;">
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;color:var(--color-text-secondary);">Found navigation easier</p>
+      <p style="margin:0;font-size:22px;font-weight:500;color:var(--color-text-primary);">85%</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;color:var(--color-text-secondary);">Login time reduced by</p>
+      <p style="margin:0;font-size:22px;font-weight:500;color:var(--color-text-primary);">40%</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;color:var(--color-text-secondary);">Booking errors dropped</p>
+      <p style="margin:0;font-size:22px;font-weight:500;color:var(--color-text-primary);">30%</p>
+    </div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center;">
+      <p style="margin:0 0 3px;font-size:10px;color:var(--color-text-secondary);">Steps reduced from</p>
+      <p style="margin:0;font-size:22px;font-weight:500;color:var(--color-text-primary);">7 → 4</p>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 0.75rem;">Before vs After — Flaws Identified and Resolved</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;">
+    <div>
+      <p style="margin:0 0 7px;font-size:11px;font-weight:500;color:#A32D2D;">BEFORE — Original IRCTC</p>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="background:#FCEBEB;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#791F1F;">Visual clutter</p><p style="margin:0;font-size:10px;color:#A32D2D;">Dense homepage, 20+ links, competing CTAs, no visual hierarchy</p></div>
+        <div style="background:#FCEBEB;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#791F1F;">Friction login</p><p style="margin:0;font-size:10px;color:#A32D2D;">Distorted CAPTCHA, repeated failures, frequent session timeouts</p></div>
+        <div style="background:#FCEBEB;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#791F1F;">Hidden availability</p><p style="margin:0;font-size:10px;color:#A32D2D;">Seat status only visible after 3+ clicks into train detail page</p></div>
+        <div style="background:#FCEBEB;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#791F1F;">Payment anxiety</p><p style="margin:0;font-size:10px;color:#A32D2D;">No SSL indicators, confusing gateway redirects, 4-screen payment</p></div>
+        <div style="background:#FCEBEB;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#791F1F;">No accessibility</p><p style="margin:0;font-size:10px;color:#A32D2D;">Small targets, jargon, no screen reader support, no regional language</p></div>
+      </div>
+    </div>
+    <div>
+      <p style="margin:0 0 7px;font-size:11px;font-weight:500;color:#0F6E56;">AFTER — Redesigned IRCTC</p>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="background:#E1F5EE;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#085041;">Search-first homepage</p><p style="margin:0;font-size:10px;color:#0F6E56;">Prominent search card, 4 quick-action shortcuts, minimal above-fold content</p></div>
+        <div style="background:#E1F5EE;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#085041;">Frictionless login</p><p style="margin:0;font-size:10px;color:#0F6E56;">Mobile OTP, Google/Facebook social login, "remember me" toggle</p></div>
+        <div style="background:#E1F5EE;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#085041;">Inline availability</p><p style="margin:0;font-size:10px;color:#0F6E56;">Avail/WL count and fare shown on train card — zero extra clicks</p></div>
+        <div style="background:#E1F5EE;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#085041;">Trust-first payment</p><p style="margin:0;font-size:10px;color:#0F6E56;">SSL + PCI-DSS badges, refund policy inline, UPI one-tap shortcuts</p></div>
+        <div style="background:#E1F5EE;border-radius:7px;padding:9px 11px;"><p style="margin:0 0 2px;font-size:11px;font-weight:500;color:#085041;">WCAG AA accessible</p><p style="margin:0;font-size:10px;color:#0F6E56;">44px+ targets, disability quota auto-select, plain labels, senior assist CTA</p></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 0.75rem;">Business Impact & Roadmap</p>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px;"><p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">Retention & Revenue</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Fewer drop-offs from 4-step flow directly increases conversion rate and ancillary sales (meals, insurance, cab).</p></div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px;"><p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">Personalization (Roadmap)</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Saved trips, tailored fare alerts, contextual offers for frequent routes — driving loyalty and repeat bookings.</p></div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px;"><p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">Accessibility Expansion</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Voice-assisted booking, 22 regional Indian languages, full WCAG 2.1 AA compliance — broadening India's 1.4B reach.</p></div>
+    <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:11px;"><p style="margin:0 0 3px;font-size:11px;font-weight:500;color:var(--color-text-primary);">Engagement Features</p><p style="margin:0;font-size:10px;color:var(--color-text-secondary);">Gamified loyalty check-ins, real-time delay push notifications, travel insights dashboard on roadmap.</p></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showTab(n){
+  ['d','r','p','t'].forEach(t=>{
+    document.getElementById('sec-'+t).classList.remove('active');
+    document.getElementById('tb-'+t).classList.remove('active');
+  });
+  document.getElementById('sec-'+n).classList.add('active');
+  document.getElementById('tb-'+n).classList.add('active');
+}
+function gs(idx){
+  for(let i=0;i<6;i++){
+    const s=document.getElementById('ps-'+i);
+    const n=document.getElementById('snav-'+i);
+    if(s)s.classList.remove('active');
+    if(n)n.classList.remove('active');
+  }
+  const s=document.getElementById('ps-'+idx);
+  const n=document.getElementById('snav-'+idx);
+  if(s)s.classList.add('active');
+  if(n)n.classList.add('active');
+  showTab('p');
+}
+</script>
